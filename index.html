@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If it is running</title>
+</head>
+<body>
+    <h1>Json and Ajex Learning code to remaind letter</h1>
+    <div class="JsonCode">
+        <h3>bellow is json object array</h3>
+        <p>
+         &nbsp;   [ <br>
+         &nbsp;  &nbsp;  {<br>
+     &nbsp;  &nbsp; "name": "Meowsy",<br>
+     &nbsp;  &nbsp; "species" : "cat",<br>
+     &nbsp;  &nbsp; "foods": {<br>
+      &nbsp;  &nbsp;  "likes": ["tuna", "catnip"],<br>
+      &nbsp;  &nbsp;  "dislikes": ["ham", "zucchini"]<br>
+       &nbsp; &nbsp;    }<br>
+      &nbsp;  },<br>
+      &nbsp;  {<br>
+    &nbsp;  &nbsp;  "name": "Barky",<br>
+    &nbsp;  &nbsp;  "species" : "dog",<br>
+    &nbsp;  &nbsp;  "foods": {<br>
+     &nbsp;  &nbsp;   "likes": ["bones", "carrots"],<br>
+     &nbsp;  &nbsp;   "dislikes": ["tuna"]<br>
+      &nbsp; &nbsp;   }<br>
+     &nbsp;   },<br>
+     &nbsp;   {<br>
+    &nbsp;  &nbsp;  "name": "Purrpaws",<br>
+    &nbsp;  &nbsp;  "species" : "cat",<br>
+     &nbsp;  &nbsp; "foods": {<br>
+       &nbsp;  &nbsp; "likes": ["mice"],<br>
+      &nbsp;  &nbsp;  "dislikes": ["cookies"]<br>
+       &nbsp; &nbsp;   }<br>
+      &nbsp;  }<br>
+]<br>
+        </p>
+    </div>
+    <!--End of Json code-->
+    <h2>Bellow tha Ajex code</h2>
+    
+
+    <script>
+       var ourRequest = new XMLHttpRequest();
+       ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+       ourRequest.onload = function(){
+        var ourData = JSON.parse(ourRequest.responseText);
+        console.log(ourData[0]);
+       };
+       ourRequest.send();
+    </script>
+
+</body>
+</html>
