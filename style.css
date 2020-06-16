@@ -1,0 +1,13 @@
+body{
+    display:flex;
+}
+.but{
+    margin-left:100px;
+}
+
+button{
+    color: white;
+    padding:8px;
+    background-color:rgb(97, 174, 226);
+
+}

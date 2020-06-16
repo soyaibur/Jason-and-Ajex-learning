@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>If it is running</title>
 </head>
 <body>
-    <h1>Json and Ajex Learning code to remaind letter</h1>
+    
     <div class="JsonCode">
+        <h1>Json and Ajex Learning code to remaind letter</h1>
         <h3>bellow is json object array</h3>
         <p>
          &nbsp;   [ <br>
@@ -39,18 +41,15 @@
         </p>
     </div>
     <!--End of Json code-->
-    <h2>Bellow tha Ajex code</h2>
+   
+    <div class="but">
+        <h2>Bellow tha Ajex code</h2>
+        <button id="button">Cleck hear to see how it works</button>
+    </div>
+
+    <div class="animal-info"></div>
     
 
-    <script>
-       var ourRequest = new XMLHttpRequest();
-       ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
-       ourRequest.onload = function(){
-        var ourData = JSON.parse(ourRequest.responseText);
-        console.log(ourData[0]);
-       };
-       ourRequest.send();
-    </script>
-
+<script type="text/javascript" src="main.js">  </script>
 </body>
 </html>
