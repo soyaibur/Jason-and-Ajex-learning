@@ -1,22 +1,27 @@
-var pageCounter = 1;
-var das = document.getElementById("animal-info");
-document.getElementById("button").addEventListener('click',function(){
-  var ourRequest =new XMLHttpRequest();
-  ourRequest.open('GET','https://learnwebcode.github.io/json-example/animals-'+ pageCounter +'.json');
-  ourRequest.onload = function(){
-     var ourData = JSON.parse(ourRequest.responseText);
-     renderHTML(ourData);
+var btn = document.getElementById("button");
+var animals = document.getElementById("animal-info");
+
+
+
+btn.addEventListener('click',function(){
+  var OurRequest = XMLHttpRequest();
+  OurRequest.open('GET','https://learnwebcode.github.io/json-example/animals-1.json');
+  OurRequest.onload = function(){
+    var OurData = JSON.parse(OurRequest.responseText);
+    renderHtml(OurData);
+  
   }
-  ourRequest.send();
-  pageCounter++;
+  OurRequest.send();
+  
 });
 
-function renderHTML(data){
-  var htmlString = "";
+function renderHtml(Data){
+  var dis = "";
 
-  for (let i = 0; i < data.length; i++) {
-    htmlString += "<p>" + data[i].name +"is a " + data[i].species +".</p>";
-    
+  for(i = 0; i < Data.length; i++){
+    dis += "<p>"+ Data[i].name +" is a "+ Data[i].species+", </p>"; 
   }
- das.insertAdjacentHTML('beforeend', htmlString);
+  
+  animals.innerHTML = dis;
+
 }
