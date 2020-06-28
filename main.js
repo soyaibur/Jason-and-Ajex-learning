@@ -4,7 +4,7 @@ var animals = document.getElementById("animal-info");
 
 
 btn.addEventListener('click',function(){
-  var OurRequest = XMLHttpRequest();
+  var OurRequest = new XMLHttpRequest();
   OurRequest.open('GET','https://learnwebcode.github.io/json-example/animals-1.json');
   OurRequest.onload = function(){
     var OurData = JSON.parse(OurRequest.responseText);
@@ -16,12 +16,31 @@ btn.addEventListener('click',function(){
 });
 
 function renderHtml(Data){
-  var dis = "";
+  var htmlString = "";
+    
+   for(i = 0; i < Data.length; i++){
+    htmlString += "<p>"+ Data[i].name +" is a "+ Data[i].species+", that likes to eat "; 
+     for (let all = 0; all < Data[i].foods.likes.length; all++) {
+        if (all == 0) {
+          htmlString += Data[i].foods.likes[all];
+        } else{
+          htmlString +=" and "+ Data[i].foods.likes[all];
+        }
+       
+     }
 
-  for(i = 0; i < Data.length; i++){
-    dis += "<p>"+ Data[i].name +" is a "+ Data[i].species+", </p>"; 
+     htmlString += " and dislikes ";
+     for (let all = 0; all < Data[i].foods.dislikes.length; all++) {
+      if (all == 0) {
+        htmlString += Data[i].foods.dislikes[all];
+      } else{
+        htmlString +=" and "+ Data[i].foods.dislikes[all];
+      }
+     
+   }
+     htmlString += "</p>";
   }
   
-  animals.innerHTML = dis;
+  animals.insertAdjacentHTML('beforeend',htmlString);
 
 }
